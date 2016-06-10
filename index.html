@@ -1,1 +1,37 @@
-Justin Parmar
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Justin Parmar</title>
+	</head>
+	<body>
+		<h1 style="color:#bdcfeb;">This is a Blue Heading</h1>
+		<h1 style="color:#c87e7d;">This is a brown Heading</h1>
+		<h1 style="color:#ccc;">This is a gray Heading</h1>
+		<h1 style="color:#8fd8a0;">This is a green Heading</h1>
+		<h1 style="color:#ccff66;">This is a lime Heading</h1>
+		<h1 style="color:#fb8335;">This is a orange Heading</h1>
+		<h1 style="color:#f87faf;">This is a pink Heading</h1>
+		<h1 style="color:#d18fd9;">This is a purple Heading</h1>
+		<h1 style="color:#ff6684;">This is a red Heading</h1>
+		<h1 style="color:#faf06c;">This is a yellow Heading</h1>
+		<h1 style="color:#f2e9b4;">This is a wheat Heading</h1>
+	
+		<script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+		
+		<script type="text/javascript">
+			$.getScript('js/jquery.signalR-2.2.0.min.js').done(function () {
+				$.getScript("http://localhost:25245/signalr/hubs").done(function () {
+					$(function () {
+						$.connection.hub.url = "http://localhost:25245/signalr";
+						var hub = $.connection.testHub;
+						// Start the connection.
+						$.connection.hub.start();
+						hub.client.BroadcastUserChange = function () {
+							return true;
+						}
+					});
+				});
+			});
+		</script>
+	</body>
+</html>
