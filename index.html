@@ -100,9 +100,52 @@
 				<div id="content-inner">
 				
 					<main id="contentbar">
-						<div class="article">
-							<p><script>generateText(12)</script></p>
-						</div>
+								<div class="container">
+			<form action="https://dev05-na01-unilever.demandware.net/s/shm-us/hairquiz" method="post" id="demo">
+				<h1>Hair Quiz Products</h1>
+				<div class="field">
+					<label for="name">pid 1:</label>
+					<input type="text" id="pid1" name="pid1" placeholder="Enter product id 1" />
+					<small></small>
+				</div>
+				<div class="field">
+					<label for="qty1">Qty 1:</label>
+					<input type="text" id="qty1" name="qty1" placeholder="Enter Qty 1" />
+					<small></small>
+				</div>
+				<div class="field">
+					<label for="name">pid 2:</label>
+					<input type="text" id="pid2" name="pid2" placeholder="Enter product id 2" />
+					<small></small>
+				</div>
+				<div class="field">
+					<label for="qty2">Qty 2:</label>
+					<input type="text" id="qty2" name="qty2" placeholder="Enter Qty 2" />
+					<small></small>
+				</div>
+				<input type="hidden" id="params" name="parameter" />
+				<div class="field">
+					<button type="submit" class="full">Submit</button>
+				</div>
+			</form>
+		</div>
+		<script>
+		
+			var form = document.querySelector("#demo");
+
+			form.addEventListener("submit", function (event) {
+				var pid1 = form.elements["pid1"].value.trim();
+				var qty1 = form.elements["qty1"].value.trim();
+				var pid2 = form.elements["pid2"].value.trim();
+				var qty2 = form.elements["qty2"].value.trim();
+				
+				var params = '[{"pid": ' + pid1 + ',"qty": ' + qty1 + '}, {"pid": ' + pid2 + ',"qty": ' + qty2 + '}]';
+				
+				form.elements["params"].value = params;
+				
+				return true;
+			});
+		</script>
 					</main>
 					
 					<nav id="sidebar">
