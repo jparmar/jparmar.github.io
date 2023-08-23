@@ -4,23 +4,47 @@
 		<title>JavaScript Form Demo</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<style>
-@font-face {
-    font-family: 'Schnyder S Web Light';
-    src: url('SchnyderS-Light-Web.woff2') format('woff2'),
-    url('../fonts/SchnyderS-Light-Web.woff') format('woff');
-    font-weight: 300;
-    font-style: normal;
-    font-stretch: normal;
-    }
+			@font-face {
+				font-family: 'Schnyder S Web Light';
+				src: url('SchnyderS-Light-Web.woff2') format('woff2'),
+				url('../fonts/SchnyderS-Light-Web.woff') format('woff');
+				font-weight: 300;
+				font-style: normal;
+				font-stretch: normal;
+			}
+			@font-face {
+				font-family: 'Spezia Regular';
+				src: url('SpeziaWeb-Regular.woff2') format('woff2'),
+				url('../fonts/SpeziaWeb-Regular.woff') format('woff');
+				font-weight: 300;
+				font-style: normal;
+				font-stretch: normal;
+			}
+			@font-face {
+				font-family: 'Spezia Medium';
+				src: url('SpeziaWeb-Medium.woff2') format('woff2'),
+				url('../fonts/SpeziaWeb-Medium.woff') format('woff');
+				font-weight: 500;
+				font-style: normal;
+				font-stretch: normal;
+			}
 			.container {
- font-family: 'Schnyder S Web Light';
-}
+				font-family: 'Schnyder S Web Light';
+			}
+			.spz-regular {
+				font-family: 'Spezia Regular';
+			}
+			.spz-medium {
+				font-family: 'Spezia Medium';
+			}
 		</style>
-	</head>
+		</head>
 	<body>
 		<div class="container">
 			<form action="https://dev05-na01-unilever.demandware.net/s/shm-us/hairquiz" method="post" id="demo">
 				<h1>Hair Quiz Products</h1>
+				<p class="spz-regular">spezia regular</p>
+				<p class="spz-medium">spezia medium</p>
 				<div class="field">
 					<label for="name">pid 1:</label>
 					<input type="text" id="pid1" name="pid1" placeholder="Enter product id 1" />
